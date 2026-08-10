@@ -1,0 +1,32 @@
+/* Modify the qsort.c program of Section 9.6 so that the quicksort and split func-
+tions are in a separate file named quicksort.c. Create a header file named quick-
+sort.h that contains prototypes for the two functions and have both qsort.c and
+quicksort.c include this file.*/
+
+/* qsort.c (Chapter 9, page 207) */
+/* Sorts an array of integers using Quicksort algorithm */
+
+#include <stdio.h>
+#include "quicksort.h"
+#define N 10
+
+void quicksort(int a[], int low, int high);
+int split(int a[], int low, int high);
+
+int main(void)
+{
+  int a[N], i;
+
+  printf("Enter %d numbers to be sorted: ", N);
+  for (i = 0; i < N; i++)
+    scanf("%d", &a[i]);
+
+  quicksort(a, 0, N - 1);
+
+  printf("In sorted order: ");
+  for (i = 0; i < N; i++)
+    printf("%d ", a[i]);
+  printf("\n");
+
+  return 0;
+}
