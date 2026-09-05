@@ -18,8 +18,13 @@ int main(void)
 	}
 	if (a == 0)
 	{
-		printf("Error. Not a quadratic equation.\n");
-		exit(EXIT_FAILURE);
+		if (b == 0)
+		{
+			printf("y = %.2lf\n", c);
+			return 0;
+		}
+		printf("x = %.2lf\n", -c / b);
+		return 0;
 	}
 	res1 = b * b - (4 * a * c);
 	if (res1 < 0)
