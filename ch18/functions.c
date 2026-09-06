@@ -5,7 +5,7 @@ int call_count(void)
     return count;
 }
 
-int ft_toggle(void)
+int func_toggle(void)
 {
     static int toggle = 0;
 
@@ -16,7 +16,7 @@ int ft_toggle(void)
     return toggle;
 }
 
-int ft_running_average(int n)
+int func_running_average(int n)
 {
     static int calls = 0;
     static int sum = 0;
