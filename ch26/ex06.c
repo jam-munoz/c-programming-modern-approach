@@ -13,21 +13,21 @@ char *max_pair(int num_pairs, ...)
 	va_list	ap;
 	int		largest;
 	int		current;
-	char	*p;
+	char	*str;
 
 	if (num_pairs < 1)
 		return NULL;
 
 	va_start(ap, num_pairs);
 	largest = va_arg(ap, int);
-	p = va_arg(ap, char *);
+	str = va_arg(ap, char *);
 	for (int i = 1; i < num_pairs; i++)
 	{
 
 		current = va_arg(ap, int);
 		if (current > largest)
 		{
-			p = va_arg(ap, char *);
+			str = va_arg(ap, char *);
 			largest = current;
 		}
 		else
@@ -35,7 +35,7 @@ char *max_pair(int num_pairs, ...)
 	}
 	va_end(ap);
 
-	return (p);
+	return (str);
 }
 
 int main(void)
