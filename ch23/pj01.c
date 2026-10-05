@@ -20,10 +20,13 @@ int main(void)
 	{
 		if (b == 0)
 		{
-			printf("y = %.2lf\n", c);
+			if (c == 0)
+				printf("All real numbers are solutions\n");
+			else
+				printf("No solution\n");
 			return 0;
 		}
-		printf("x = %.2lf\n", -c / b);
+		printf("root = %g\n", -c / b);
 		return 0;
 	}
 	res1 = b * b - (4 * a * c);
@@ -35,6 +38,6 @@ int main(void)
 	res1 = sqrt(res1);
 	res2 = (-b - res1) / (2 * a);
 	res1 = (-b + res1) / (2 * a);
-	printf("x1 = %.2lf\nx2 = %.2lf\n", res1, res2);
+	printf("x1 = %g\nx2 = %g\n", res1, res2);
 	return 0;
 }
